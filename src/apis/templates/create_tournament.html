@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block subbody %}
+    <div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+			
+            <form class="form"  method="POST" action="/create_tournament">
+                <select name="series_id" style="width: 250px;height: 50px;background-color:rgba(255, 255, 255, 0.2);margin:10px;">
+                {% for series_name in series_names %}
+                    <option value="{{ series_name['id'] }}">{{ series_name["name"] }}</option>
+                {% endfor %}
+                </select>
+				<input type="text" name="name" placeholder="Tournament Name">
+				<input type="text" name="city" placeholder="City">
+				<input type="text" name="country" placeholder="Country">
+
+                <input type="date" name="date_start" placeholder="start date: YYYY-MM-DD">
+				<input type="date" name="date_end" placeholder="end date: YYYY-MM-DD">
+                <button>Submit</button>
+			</form>
+		</div>
+
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+    </div>
+{% endblock subbody %}

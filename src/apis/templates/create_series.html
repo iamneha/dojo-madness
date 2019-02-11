@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block subbody %}
+    <div class="wrapper">
+		<div class="container">
+			<h1>Welcome</h1>
+			
+			<form class="form"  method="POST" action="/create_series">
+				<input type="text" name="name" placeholder="Enter Series Name">
+				<input type="date" name="date_start" placeholder="start date: YYYY-MM-DD">
+				<input type="date" name="date_end" placeholder="end date: YYYY-MM-DD">
+                <button>Submit</button>
+			</form>
+		</div>
+		
+		<ul class="bg-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+    </div>
+{% endblock subbody %}

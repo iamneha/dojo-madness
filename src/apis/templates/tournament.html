@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block subbody %}
+  <div>
+    <div class="card-body">
+        <form method="GET" action="/tournament">
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-1" type="date" name="date_start" placeholder="Date start">
+                        <center>Date Start</center>
+                      </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-1" type="date" name="date_end" placeholder="Date end">
+                        <center>Date End</center>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group">
+                            <input class="input--style-1" type="text" name="series_name" placeholder="Series name">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button class="btn-submit" type="submit">search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+<section>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Tournament name</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>Date Start</th>
+          <th>Date End</th>
+          <th>Series Name</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>{{ item['name'] }}</td>
+          <td>{{ item['city'] }}</td>
+          <td>{{ item['country'] }}</td>
+          <td>{{ item['date_start'] }}</td>
+          <td>{{ item['date_end'] }}</td>
+          <td>{{ item['series']['name'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock subbody%}
